@@ -1,110 +1,117 @@
-# Bank Customer Churn Predictor 🏦
+# Bank Customer Churn Predictor
 
-![image](https://github.com/user-attachments/assets/56f888ec-994b-41f0-8e52-c0108c79fd6f)
+Predict whether a bank customer will leave — and generate smart, personalized retention strategies using Machine Learning and LLMs.
+
+![App Screenshot](https://github.com/user-attachments/assets/56f888ec-994b-41f0-8e52-c0108c79fd6f)
+
+---
 
 ## Overview
-An end-to-end machine learning application that predicts customer churn probability and generates personalized engagement strategies using ML models and LLMs.
 
-## 🔥 Features
-- **Multi-Model Prediction**: Ensemble of 9 different ML models including XGBoost, Random Forest, and SVM
-- **Interactive Dashboard**: Built with Streamlit for easy data input and visualization
-- **AI-Driven Engagement**: Personalized customer retention strategies using Groq's LLM
-- **Advanced ML Techniques**: 
-  - SMOTE for handling imbalanced data
-  - Feature engineering for improved accuracy
-  - Voting classifier for ensemble predictions
+A Streamlit web application that:
+- Uses a combination of machine learning models to predict churn
+- Leverages Groq's LLM to provide actionable customer retention strategies
+- Runs locally or in the browser with minimal setup
 
-## 🚀 Live Demo
-Try out the live application here: [Bank Churn Predictor](https://bank-churn-predictor.streamlit.app)
+---
 
-## 💻 Tech Stack
+## Features
+
+- Churn prediction using an ensemble of 9 models (XGBoost, Random Forest, SVM, etc.)
+- SMOTE and feature engineering to improve performance
+- Real-time retention suggestions via Groq API
+- Interactive dashboard built with Streamlit and Plotly
+
+---
+
+## Live Demo
+
+[Try the app here](https://predictor-bank-churn.streamlit.app/)
+
+---
+
+## Model Performance
+
+| Model Variant               | Accuracy |
+|----------------------------|----------|
+| XGBoost + SMOTE            | 86%      |
+| Feature Engineered XGBoost | 88%      |
+| Voting Classifier (9 total)| 87%      |
+
+---
+
+## Tech Stack
+
 - Python 3.12
 - Streamlit
-- Scikit-learn
-- XGBoost
-- Pandas
-- NumPy
+- scikit-learn, XGBoost, imbalanced-learn (SMOTE)
+- Pandas, NumPy, Plotly
 - Groq API
-- Plotly
 
-## 📊 Model Performance
-- XGBoost with SMOTE: 86% accuracy
-- Feature-engineered model: 88% accuracy
-- Voting Classifier: 87% accuracy
+---
 
-## 🛠️ Installation & Setup
+## Project Structure
 
-1. **Clone the repository**
+```
+bank-churn-predictor/
+├── .env.example
+├── main.py
+├── models/
+│   └── xgboost_model.pkl
+├── data/
+│   └── churn.csv
+├── utils/
+│   └── preprocessing.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Installation & Setup
+
+### Prerequisites
+
+- Python 3.11+
+- Groq API key (sign up at [groq.com](https://groq.com))
+- Git
+
+### Steps
+
 ```bash
+# Clone the repository
 git clone https://github.com/yourusername/bank-churn-predictor.git
 cd bank-churn-predictor
-```
 
-2. **Install dependencies**
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-3. **Set up environment variables**
-```bash
-# Create a .env file in the root directory and add:
-GROQ_API_KEY=your_api_key_here
-```
+# Set up environment variables
+cp .env.example .env
+# Add your GROQ_API_KEY in the .env file
 
-4. **Run the application**
-```bash
+# Run the app
 streamlit run main.py
 ```
 
-### Prerequisites
-- Python 3.11 or higher
-- Groq API key (get it from [Groq's website](https://groq.com))
-- Git
+Make sure:
+- All model files (.pkl) are in the `models/` directory
+- The dataset (`churn.csv`) is in the `data/` directory
 
-### Note
-Make sure all model files (`.pkl`) are in the `models/` directory and the dataset (`churn.csv`) is in the `data/` directory before running the application.
+---
 
-## 📁 Project Structure
-```
-bank-churn-predictor/
-├── main.py                     # Main Streamlit application
-├── utils.py                    # Utility functions and visualizations
-├── requirements.txt            # Project dependencies
-├── .env                        # Environment variables (Groq API key)
-├── models/                     # Trained ML models
-│   ├── xgb_model.pkl          # XGBoost model
-│   ├── nb_model.pkl           # Naive Bayes model
-│   ├── rf_model.pkl           # Random Forest model
-│   ├── dt_model.pkl           # Decision Tree model
-│   ├── svm_model.pkl          # SVM model
-│   ├── knn_model.pkl          # K-Nearest Neighbors model
-│   ├── voting_clf.pkl         # Voting Classifier model
-│   ├── xgboost-SMOTE.pkl      # XGBoost with SMOTE
-│   └── xgboost-featureEngineered.pkl  # Feature-engineered XGBoost
-├── data/                       # Dataset directory
-│   └── churn.csv              # Bank customer dataset
-├── notebooks/                  # Jupyter notebooks
-│   └── model_training.ipynb    # Model training and analysis
-└── README.md                   # Project documentation
-```
+## Future Improvements
 
-## 🔮 Future Improvements
-- [ ] Retrain models with different feature engineering approaches
-- [ ] Implement GradientBoostingClassifier and StackingClassifier
-- [ ] Explore different LLM options and prompting techniques
-- [ ] Deploy ML models as separate API endpoints
-- [ ] Test models on different churn datasets
+- Retrain models using alternative feature engineering
+- Add `GradientBoostingClassifier` and `StackingClassifier`
+- Explore alternative LLMs and prompt strategies
+- Deploy models as standalone APIs
+- Test across multiple churn datasets
 
-## 📝 Blog Post
-Read about the development process and technical details in my blog post: [How I Built a System to Predict and Prevent Bank Customer Churn Using ML, LLMs, and Streamlit](https://imalexwang.substack.com/p/how-i-built-a-system-to-predict-and)
+---
 
-## 📫 Contact
-- LinkedIn: [Alex Wang](https://www.linkedin.com/in/alexwang-/)
-- Twitter: [@imalexwang](https://x.com/imalexwang)
-- Blog: [solo diaries](https://imalexwang.substack.com/)
-# Bank-Churn-Predictor
-# Bank-Churn-Predictor
-# Bank-Churn-Predictor
-# Bank-Churn-Predictor
-# Bank-Churn-Predictor
-# Bank-Churn-Predictor
+## Author
+
+**Tushar Suredia** – [GitHub @twoChar](https://github.com/twoChar)
+
+If you find this useful, feel free to star the repo or contribute!
