@@ -1,6 +1,6 @@
 # Bank Customer Churn Predictor
 
-Predict whether a bank customer will leave — and generate smart, personalized retention strategies using Machine Learning and LLMs.
+Predict whether a bank customer will leave and generate smart, personalized retention strategies using Machine Learning and LLMs.
 
 ![App Screenshot](https://github.com/user-attachments/assets/56f888ec-994b-41f0-8e52-c0108c79fd6f)
 
